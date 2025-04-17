@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Compte à rebours jusqu'à mon anniversaire</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      margin-top: 100px;
+      background-color: #f9f9f9;
+    }
+    h1 {
+      font-size: 2.5em;
+    }
+    .countdown {
+      font-size: 3em;
+      color: #ff4081;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Jusqu'à mon anniversaire 🎂</h1>
+  <div class="countdown" id="countdown">Calcul en cours...</div>
+
+  <script>
+    function updateCountdown() {
+      const today = new Date();
+      const thisYear = today.getFullYear();
+      let birthday = new Date(thisYear, 7, 15); // 🎯 Mois = 0 (janvier) à 11 (décembre)
+
+      // Si l’anniversaire est passé cette année, prendre l’année suivante
+      if (today > birthday) {
+        birthday = new Date(thisYear + 1, 7, 15);
+      }
+
+      const timeDiff = birthday - today;
+      const daysLeft = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
+      document.getElementById('countdown').innerText = `J-${daysLeft}`;
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000 * 60 * 60); // mise à jour toutes les heures
+  </script>
+</body>
+</html>

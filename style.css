@@ -60,10 +60,28 @@ body {
     text-decoration: underline;
 }
 
+.container {
+	width: 40%;
+	margin: 2rem auto;
+}
 h1 {
-	font-size: 2rem;
+	font-size: 2.5rem;
 }
 .countdown {
-	font-size: 2.5rem;
+	font-size: 3rem;
 	color: #EE1010;
+}
+/**********************************************************************************/
+/* EN DESSOUS DE 600PX */
+/**********************************************************************************/
+@media screen and (max-width: 600px) {
+	.container {
+		width: 95%;
+	}
+    h1 {
+		font-size: 3.5rem;
+	}
+	.countdown {
+		font-size: 4rem;
+    }
 }

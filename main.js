@@ -11,13 +11,13 @@ function updateCountdown() {
 updateCountdown();
 
 document.addEventListener("DOMContentLoaded", () => {
-	const TITLES = ["❗","‼️","⁉️"];
+	const TITLES = ["❗","❓"];
 
 	let index = 0;
 
 	setInterval(() => {
 		document.title = TITLES[index];
 		index = (index + 1) % TITLES.length;
-	}, 30000);
+	}, 10000);
 });
  

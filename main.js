@@ -1,7 +1,7 @@
 function updateCountdown() {
   const today = new Date();
   const thisYear = today.getFullYear();
-  let birthday = new Date(thisYear, 11, 1); //
+  let birthday = new Date(thisYear, 11, 31); //
 
   const timeDiff = birthday - today;
   const daysLeft = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
